@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<title>求学历程</title>
+		<meta content="width=device-width, initial-scale=1.0" name="viewport">
+		<meta content="" name="keywords">
+		<meta content="" name="description">
+		<!-- Google Web Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Raleway:wght@100;600;800&display=swap"
+			rel="stylesheet">
+		<!-- 图标字体样式表 -->
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+		<!-- <link href="https://cdn.bootcdn.net/ajax/libs/bootstrap-icons/1.4.1/font/bootstrap-icons.css" rel="stylesheet"> -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+		<!-- 库样式表 -->
+		<!-- <link href="lib/animate/animate.min.css" rel="stylesheet"> -->
+		<link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+		<!-- 自定义 Bootstrap 样式表 -->
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+		<!-- 模板样式表 -->
+		<link href="css/style.css" rel="stylesheet">
+		<link rel="shortcut icon" href="img/tx.jpg" type="image/x-icon">
+		<style type="text/css">
+			/* 下拉 */
+			a:focus {
+				outline: none;
+			}
+
+			#panel {
+				background: #754c24;
+				height: 200px;
+				display: none;
+				padding: 15px 5px 0px 5px;
+			}
+
+			.slide {
+				margin: 0;
+				padding: 0px;
+				border-top: solid 4px #422410;
+				background: url(img/btn-slide.gif) no-repeat center top;
+				width: 100%;
+			}
+
+			.btn-slide {
+				background: url(img/white-arrow.gif) no-repeat right -50px;
+				text-align: center;
+				width: 144px;
+				height: 31px;
+				padding: 10px 10px 0 0;
+				margin: 0 auto;
+				display: block;
+				font: bold 120%/100% Arial, Helvetica, sans-serif;
+				color: #fff;
+				text-decoration: none;
+			}
+
+			.active {
+				background-position: right 12px;
+			}
+
+			/* 隐藏 */
+			.accordion {
+				width: 100%;
+				border-bottom: solid 1px #c4c4c4;
+			}
+
+			.accordion h3 {
+				background: #e9e7e7 url(img/arrow-square.gif) no-repeat right -51px;
+				padding: 7px 15px;
+				margin: 0;
+				font: bold 120%/100% Arial, Helvetica, sans-serif;
+				border: solid 1px #c4c4c4;
+				border-bottom: none;
+				cursor: pointer;
+			}
+
+			.accordion h3:hover {
+				background-color: #e3e2e2;
+			}
+
+			.accordion h3.active {
+				background-position: right 5px;
+			}
+
+			.accordion p {
+				background: #f7f7f7;
+				margin: 0;
+				padding: 10px 15px 20px;
+				border-left: solid 1px #c4c4c4;
+				border-right: solid 1px #c4c4c4;
+			}
+		</style>
+
+	</head>
+
+	<body>
+
+		<!-- Spinner Start -->
+		<div id="spinner"
+			class="show w-100 vh-100 bg-white position-fixed translate-middle top-50 start-50  d-flex align-items-center justify-content-center">
+			<div class="spinner-grow text-primary" role="status"></div>
+		</div>
+		<!-- Spinner End -->
+
+
+		<!--导航栏开始 -->
+		<div class="container-fluid sticky-top px-0">
+			<div class="container-fluid topbar bg-dark d-none d-lg-block">
+				<div class="container px-0">
+					<div class="topbar-top d-flex justify-content-between flex-lg-wrap">
+						<div class="top-info flex-grow-0">
+							<span class="rounded-circle btn-sm-square bg-primary me-2">
+								<img src="img/tx.jpg" class="rounded-circle" style="height:3rem;">
+							</span>
+							<div class="pe-2 me-3 border-end border-white d-flex align-items-center">
+								<p class="mb-0 text-white fs-6 fw-normal">周涛</p>
+							</div>
+							<div class="overflow-hidden" style="width: 735px;">
+								<div id="note" class="ps-2">
+									<img src="img/tx.jpg" class=" rounded-circle border border-3 border-primary me-2"
+										style="width: 30px; height: 30px;" alt="">
+									<a href="#">
+										<p class="text-white mb-0 link-hover">欢迎你访问我的个人博客，希望你能够有所收获！</p>
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="top-link flex-lg-wrap">
+							<i class="fas fa-calendar-alt text-white border-end border-secondary pe-2 me-2">
+								<span id="currentDate" class="text-body"></span>
+							</i>
+
+							<div class="d-flex icon">
+								<p class="mb-0 text-white me-2">明日已来,世界尽在窗外!</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="container-fluid bg-light">
+				<div class="container px-0">
+					<nav class="navbar navbar-light navbar-expand-xl">
+						<a href="index.html" class="navbar-brand mt-1">
+							<p class="text-primary display-6 mb-1" style="line-height: 0; font-family:华文新魏;">明 日 世 界 窗
+							</p>
+
+						</a>
+						<button class="navbar-toggler py-2 px-3" type="button" data-bs-toggle="collapse"
+							data-bs-target="#navbarCollapse">
+							<span class="fa fa-bars text-primary"></span>
+						</button>
+						<div class="collapse navbar-collapse bg-light py-3" id="navbarCollapse">
+							<div class="navbar-nav mx-auto border-top">
+								<a href="index.html" class="nav-item nav-link">首页</a>
+								<a href="haerbin.html" class="nav-item nav-link">冰城尔滨</a>
+								<a href="beijing.html" class="nav-item nav-link  ">首都北京</a>
+								<a href="liaoning.html" class="nav-item nav-link ">多彩辽宁</a>
+								<div class="nav-item dropdown ">
+									<a href="qxlc.html" class="nav-link dropdown-toggle active"
+										data-bs-toggle="dropdown">求学历程</a>
+									<div class="dropdown-menu m-0 bg-secondary rounded-0">
+										<!-- <a href="#" class="dropdown-item">高中阶段</a> -->
+										<a href="qxlc.html" class="dropdown-item">大学阶段</a>
+										<!-- <a href="#" class="dropdown-item">社会阶段</a> -->
+										<a href="zx.html" class="dropdown-item">致 谢</a>
+									</div>
+								</div>
+
+							</div>
+							<div class="d-flex flex-nowrap border-top pt-3 pt-xl-0">
+								<div class="d-flex">
+									<img src="img/weather-icon.png" class=" w-100 me-2" alt="">
+									<div class="d-flex align-items-center">
+										<strong class="fs-4 text-secondary">31°C</strong>
+										<div class="d-flex flex-column ms-2" style="width: 150px;">
+											<span class="text-body">黑龙江</span>
+											<small id="dateDisplay" class="text-black">周一 10 6月 2024</small>
+
+										</div>
+									</div>
+								</div>
+								<button
+									class="btn-search btn border border-primary btn-md-square rounded-circle bg-white my-auto"
+									data-bs-toggle="modal" data-bs-target="#searchModal"><i
+										class="fas fa-search text-primary"></i></button>
+							</div>
+						</div>
+					</nav>
+				</div>
+			</div>
+		</div>
+		<!-- Navbar End -->
+
+		<script>
+			// 定义一个函数 TopAd，用于生成顶部广告的代码  
+			function TopAd() {
+				// 初始化一个空字符串变量 strTopAd，用于存储生成的广告代码  
+				var strTopAd = "";
+
+				// 定义一个字符串变量 topSmallBanner，存储小广告的HTML代码  
+				var topSmallBanner =
+					"<div><a href=\"img/x2.jpg\" target=_blank><img src=\"img/x1.jpg\" style=\"width: 100%;height: 80%;\" /></a></div>";
+
+				// 判断当前页面的URL是否等于 "fuye.html" 或 "fuye.html/"  
+				// 注意：这里存在逻辑错误，location.href == "fuye.html" 被重复了两次，并且条件中包含了恒为真的 "true"  
+				if (location.href == "fuye.html" || location.href == "fuye.html" || location.href == "fuye.html/" || true) {
+					// 如果满足条件，则生成包含大广告和小广告的HTML代码，并赋值给 strTopAd 变量  
+					strTopAd = "<div id='adimage' style='width: 100%; position: relative; overflow: hidden;'>" +
+						// 创建一个div元素，用于包裹整个广告  
+						"<div id='adBig' style='width: 100%;'>" +
+						// 创建一个div元素用于存放大广告  
+						"<a href=\"fuye.html\" target=_blank><img title='前程似锦' src=\"img/x2.jpg\" style='width: 100%;' border=0></a>" +
+						// 创建一个链接元素，链接到大广告图片，并设置图片标题和样式  
+						"</div>" +
+						"<div id='adSmall' style='display: none; width: 100%;'>" +
+						// 创建一个div元素用于存放小广告，初始时隐藏  
+						topSmallBanner +
+						// 插入之前定义的小广告代码片段  
+						"</div></div>";
+				} else {
+					// 如果不满足条件，则只生成小广告的HTML代码，并赋值给 strTopAd 变量  
+					strTopAd = "<div style='width: 100%; height: 80%;'>" +
+						topSmallBanner +
+						"</div>";
+				}
+
+				// 在广告代码的末尾添加一个用于清除浮动和隐藏溢出的div元素  
+				strTopAd += "<div style='height: 7px; clear: both; overflow: hidden;'></div>";
+
+				// 返回生成的广告代码  
+				return strTopAd;
+			}
+
+			// 调用 TopAd 函数，并将生成的广告代码写入当前页面的 HTML 中  
+			document.write(TopAd());
+
+			// 当文档加载完成后执行以下 jQuery 函数  
+			$(function() {
+				// 设置一个定时器，在 3000 毫秒（即 3 秒）后执行 showImage 函数  
+				// 这里正确地传递了函数引用，而不是字符串  
+				setTimeout(showImage, 3000);
+			});
+
+			// 定义一个名为 showImage 的函数  
+			function showImage() {
+				// 使用 jQuery 的 slideUp 方法，以 1000 毫秒的动画效果将 id 为 adBig 的元素向上滑动隐藏  
+				$("#adBig").slideUp(1000, function() {
+					// 当 adBig 元素隐藏完成后，使用 slideDown 方法以 1000 毫秒的动画效果将 id 为 adSmall 的元素向下滑动显示  
+					$("#adSmall").slideDown(1000);
+				});
+			}
+		</script>
+		<!-- Single Product Start -->
+		<div class="container-fluid py-2">
+			<div class="container py-2">
+
+				<div class="row g-8 ">
+					<div class="col-lg-4 d-none d-lg-block">
+						<div class="row g-4">
+							<div class="col-12">
+								<div class="p-3 rounded border">
+									<h4 class="mb-4">快捷导航</h4>
+									<div class="row g-2">
+										<div class="col-12">
+											<a href="haerbin.html"
+												class="link-hover btn btn-light w-100 rounded text-uppercase text-dark py-3 font-weight-bold"
+												style="font-size: 1.2rem;">
+												冰城尔滨
+											</a>
+										</div>
+										<div class="col-12">
+											<a href="beijing.html"
+												class="link-hover btn btn-light w-100 rounded text-uppercase text-dark py-3 font-weight-bold"
+												style="font-size: 1.2rem;">
+												首都北京
+											</a>
+										</div>
+										<div class="col-12">
+											<a href="liaoning.html"
+												class="link-hover btn btn-light w-100 rounded text-uppercase text-dark py-3 font-weight-bold"
+												style="font-size: 1.2rem;">
+												多彩辽宁
+											</a>
+										</div>
+									</div>
+								</div>
+
+								<div class="position-relative rounded overflow-hidden py-3">
+									<img src="img/jw.jpg" class="rounded w-100 img-zoomin" alt="">
+								</div>
+								<div class="position-relative rounded overflow-hidden py-1">
+									<img src="img/xgg.jpg" class="rounded w-100 img-zoomin" alt="">
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+
+					<div class="col-lg-8 py-3">
+						<ol class="breadcrumb justify-content-start mb-4 text-blue">
+							您当前的位置：
+							<li class="breadcrumb-item"><a href="index.html" class="text-dark">首页</a></li>
+							<!-- <li class="breadcrumb-item"><a href="#">Pages</a></li> -->
+							<li class="breadcrumb-item active text-primary">求学历程</li>
+						</ol>
+
+						<div class="mb-4">
+							<a href="#" class="h1 display-5">求学之路即将画上句号！</a>
+						</div>
+						<!-- 下拉列表 -->
+						<div id="panel">
+							<p style="margin: 5px;color: #fff;line-height:46px;">&nbsp;&nbsp;&nbsp;&nbsp;
+								在这即将离别的时刻，让我们铭记心中的梦想，怀揣着对未来的期许，勇敢地迈向新的征程。无论前方的道路如何曲折，我们都要坚定信念，勇往直前。</p>
+						</div>
+						<p class="slide"><a href="#" class="btn-slide">了解详情</a></p>
+
+						<div class="position-relative rounded overflow-hidden mb-3 py-3">
+							<img src="img/hng1.jpg" class="img-zoomin rounded w-100" alt="">
+						</div>
+						<div class="d-flex justify-content-between">
+							<a href="#" class="text-dark link-hover me-6"><i class="fa fa-clock"></i> 06分钟阅读</a>
+							<a href="#" class="text-dark link-hover me-6"><i class="fa fa-eye"></i>3.5k查看</a>
+							<a href="#" class="text-dark link-hover me-6"><i class="fa fa-comment-dots"></i>05评论</a>
+							<a href="#" class="text-dark link-hover"><i class="fa fa-arrow-up"></i> 1.5k 分享</a>
+						</div>
+
+
+						<!-- <div class="bg-light p-4 mb-4 rounded border-start border-3 border-primary  mt-3">
+							<h1 class="mb-2">魅力农工</h1>
+							<video width="100%" controls>
+								<source src="img/shipin1.mp4" type="video/mp4">
+								您的浏览器不支持视频标签。
+							</video>
+						</div> -->
+
+
+						<div class="accordion my-4">
+							<h3>知识的殿堂</h3>
+							<p>
+								大学是知识的海洋，这里聚集了各个领域的专家和学者。学生们在这里不仅学习专业知识，还接触到多元的文化和思想，为未来的职业发展和社会适应打下坚实基础。
+							</p>
+							<h3>成长的摇篮</h3>
+							<p>大学是成长的摇篮，从青涩的高中生蜕变为独立的成年人。在这里，学生学会独立思考、解决问题，同时也学会与来自不同背景的人相处，培养团队协作和沟通能力。
+							</p>
+							<h3>梦想的起点</h3>
+							<p>大学是追逐梦想的起点。无论是学术研究、创新创业还是艺术探索，大学都为学生提供了广阔的舞台。在这里，学生可以根据自己的兴趣和天赋，选择自己的道路，并为之努力奋斗。
+							</p>
+							</h3>
+							<h3>挑战与机遇并存</h3>
+							<p>大学生活充满了挑战和机遇。学业压力、社交困惑、职业规划等问题都可能让学生感到迷茫和不安。但正是这些挑战，让学生学会了如何面对困难，如何在逆境中成长。同时，大学也为学生提供了丰富的资源和机会，让他们能够拓展视野、锻炼能力、实现梦想。
+							</p>
+							<h3>永恒的回忆</h3>
+							<p>
+								大学是一段美好而难忘的回忆。这里有朝夕相处的室友、志同道合的朋友、传道授业的老师。在这里，学生度过了人生中最美好的时光，留下了无数珍贵的回忆。这些回忆将伴随着学生的一生，成为他们人生中最宝贵的财富。
+							</p>
+						</div>
+
+
+						<!-- 定义一个具有内边距的容器 -->
+						<div class="container pt-3">
+							<!-- 标题居中显示 -->
+							<h1 style="text-align: center;">时光记忆册</h1>
+							<!-- 定义一个行，使用Masonry布局插件 -->
+							<div class="row" data-masonry='{"percentPosition": true }'>
+
+								<!-- 定义一个响应式列，在小屏设备上占6列，在大屏设备上占3列，具有边距 -->
+								<div class="col-sm-6 col-lg-3 mb-3 img-zoomin">
+									<!-- 定义一个卡片 -->
+									<div class="card">
+										<!-- 卡片顶部图片，具有响应式属性 -->
+										<img src="img/qx/1 (2).jpg" class="card-img-top" alt="...">
+										<!-- 卡片内容区域，使用flex布局使内容在基线上对齐 -->
+										<div class="card-body d-flex align-items-baseline">
+											<!-- 卡片文本内容 -->
+											<div class="card-text">松北校区职业规划</div>
+											<!-- 较小的文本，表示时间信息，靠右对齐 -->
+											<small class="text-muted ms-auto">刚刚</small>
+										</div>
+									</div>
+								</div>
+
+
+								<div class="col-sm-6 col-lg-3 mb-3 img-zoomin">
+									<div class="card">
+										<img src="img/qx/1 (3).jpg" class="card-img-top" alt="...">
+										<div class="card-body d-flex align-items-baseline">
+											<div class="card-text">信息素养国赛</div>
+											<small class="text-muted ms-auto">刚刚</small>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-sm-6 col-lg-3 mb-3 img-zoomin">
+									<div class="card">
+										<img src="img/qx/1 (5).jpg" class="card-img-top" alt="...">
+										<div class="card-body d-flex align-items-baseline">
+											<div class="card-text">哈幼专信息素养总结</div>
+											<small class="text-muted ms-auto">刚刚</small>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-sm-6 col-lg-3 mb-3 img-zoomin">
+									<div class="card">
+										<img src="img/qx/1 (7).jpg" class="card-img-top" alt="...">
+										<div class="card-body d-flex align-items-baseline">
+											<div class="card-text">信息素养总结会</div>
+											<small class="text-muted ms-auto">1天前</small>
+										</div>
+									</div>
+								</div>
+
+
+								<div class="col-sm-6 col-lg-3 mb-3 img-zoomin">
+									<div class="card">
+										<img src="img/qx/1 (9).jpg" class="card-img-top" alt="...">
+										<div class="card-body d-flex align-items-baseline">
+											<div class="card-text">实习招聘会</div>
+											<small class="text-muted ms-auto">1天前</small>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-6 col-lg-3 mb-3 img-zoomin">
+									<div class="card">
+										<img src="img/qx/1 (10).jpg" class="card-img-top" alt="...">
+										<div class="card-body d-flex align-items-baseline">
+											<div class="card-text">招聘会</div>
+											<small class="text-muted ms-auto">1天前</small>
+										</div>
+									</div>
+								</div>
+
+
+
+								<div class="col-sm-6 col-lg-3 mb-3 img-zoomin">
+									<div class="card">
+										<img src="img/qx/1 (6).jpg" class="card-img-top" alt="...">
+										<div class="card-body d-flex align-items-baseline">
+											<div class="card-text">哈幼专主楼</div>
+											<small class="text-muted ms-auto">1天前</small>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-sm-6 col-lg-3 mb-3 img-zoomin">
+									<div class="card">
+										<img src="img/qx/1 (17).jpg" class="card-img-top" alt="...">
+										<div class="card-body d-flex align-items-baseline">
+											<div class="card-text">华为ICT深哈参观</div>
+											<small class="text-muted ms-auto">1天前</small>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-6 col-lg-3 mb-3 img-zoomin">
+									<div class="card">
+										<img src="img/qx/1 (18).jpg" class="card-img-top" alt="...">
+										<div class="card-body d-flex align-items-baseline">
+											<div class="card-text">华为ICT深哈参观</div>
+											<small class="text-muted ms-auto">1天前</small>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-6 col-lg-3 mb-3 img-zoomin">
+									<div class="card">
+										<img src="img/qx/1 (19).jpg" class="card-img-top" alt="...">
+										<div class="card-body d-flex align-items-baseline">
+											<div class="card-text">华为ICT培训</div>
+											<small class="text-muted ms-auto">1天前</small>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-6 col-lg-3 mb-3 img-zoomin">
+									<div class="card">
+										<img src="img/qx/1 (20).jpg" class="card-img-top" alt="...">
+										<div class="card-body d-flex align-items-baseline">
+											<div class="card-text">产教融合楼</div>
+											<small class="text-muted ms-auto">1天前</small>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-6 col-lg-3 mb-3 img-zoomin">
+									<div class="card">
+										<img src="img/qx/1 (21).jpg" class="card-img-top" alt="...">
+										<div class="card-body d-flex align-items-baseline">
+											<div class="card-text">组装与维修</div>
+											<small class="text-muted ms-auto">1天前</small>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-6 col-lg-3 mb-3 img-zoomin">
+									<div class="card">
+										<img src="img/qx/1 (1).jpg" class="card-img-top" alt="...">
+										<div class="card-body d-flex align-items-baseline">
+											<div class="card-text">王岗镇</div>
+											<small class="text-muted ms-auto">刚刚</small>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-6 col-lg-3 mb-3 img-zoomin">
+									<div class="card">
+										<img src="img/qx/1 (4).jpg" class="card-img-top" alt="...">
+										<div class="card-body d-flex align-items-baseline">
+											<div class="card-text">信息素养国赛伙食</div>
+											<small class="text-muted ms-auto">刚刚</small>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-6 col-lg-3 mb-3 img-zoomin">
+									<div class="card">
+										<img src="img/qx/1 (8).jpg" class="card-img-top" alt="...">
+										<div class="card-body d-flex align-items-baseline">
+											<div class="card-text">毕业生分享会</div>
+											<small class="text-muted ms-auto">1天前</small>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-6 col-lg-3 mb-3 img-zoomin">
+									<div class="card">
+										<img src="img/qx/1 (11).jpg" class="card-img-top" alt="...">
+										<div class="card-body d-flex align-items-baseline">
+											<div class="card-text">JavaScript录课</div>
+											<small class="text-muted ms-auto">1天前</small>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-6 col-lg-3 mb-3 img-zoomin">
+									<div class="card">
+										<img src="img/qx/1 (13).jpg" class="card-img-top" alt="...">
+										<div class="card-body d-flex align-items-baseline">
+											<div class="card-text">黑农工</div>
+											<small class="text-muted ms-auto">1天前</small>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-6 col-lg-3 mb-3 img-zoomin">
+									<div class="card">
+										<img src="img/qx/1 (14).jpg" class="card-img-top" alt="...">
+										<div class="card-body d-flex align-items-baseline">
+											<div class="card-text">三楼食堂</div>
+											<small class="text-muted ms-auto">1天前</small>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-6 col-lg-3 mb-3 img-zoomin">
+									<div class="card">
+										<img src="img/qx/1 (16).jpg" class="card-img-top" alt="...">
+										<div class="card-body d-flex align-items-baseline">
+											<div class="card-text">华为ICT宣讲</div>
+											<small class="text-muted ms-auto">1天前</small>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-sm-6 col-lg-3 mb-3 img-zoomin">
+									<div class="card">
+										<img src="img/qx/1 (15).jpg" class="card-img-top" alt="...">
+										<div class="card-body d-flex align-items-baseline">
+											<div class="card-text">黑龙江农业工程职业学院</div>
+											<small class="text-muted ms-auto">1天前</small>
+										</div>
+									</div>
+								</div>
+
+							</div>
+						</div>
+						<hr class="my-3">
+
+						<!-- 注册 -->
+						<div class="container text-center">
+
+							<main class="row justify-content-center">
+								<div class="col-md-7 col-lg-8">
+									<h4 class="mb-3 text-center">注册信息</h4>
+									<form class="needs-validation" novalidate>
+										<div class="row g-3">
+											<div class="col-sm-6">
+												<label for="username" class="form-label">姓名</label>
+												<input type="text" class="form-control" id="username" placeholder=""
+													value="" required>
+												<div class="invalid-feedback">
+													请填写姓名
+												</div>
+											</div>
+
+											<div class="col-sm-6">
+												<label for="phone" class="form-label">手机号码</label>
+												<input type="text" class="form-control" id="phone" placeholder=""
+													value="" required>
+												<div class="invalid-feedback">
+													请填写手机号码
+												</div>
+											</div>
+
+											<div class="col-md-4">
+												<label for="province" class="form-label">省份</label>
+												<select class="form-select" id="province" required>
+													<option value="">--请选择--</option>
+													<option>黑龙江省</option>
+													<!-- 其他省份选项 -->
+												</select>
+												<div class="invalid-feedback">
+													请选择省份
+												</div>
+											</div>
+
+											<div class="col-md-4">
+												<label for="city" class="form-label">城市</label>
+												<select class="form-select" id="city" required>
+													<option value="">--请选择--</option>
+													<option>哈尔滨市</option>
+													<!-- 其他城市选项 -->
+												</select>
+												<div class="invalid-feedback">
+													请选择城市
+												</div>
+											</div>
+
+											<div class="col-md-4">
+												<label for="district" class="form-label">地区</label>
+												<select class="form-select" id="district" required>
+													<option value="">--请选择--</option>
+													<option>南岗区</option>
+													<!-- 其他地区选项 -->
+												</select>
+												<div class="invalid-feedback">
+													请选择地区
+												</div>
+											</div>
+
+											<div class="col-12">
+												<label for="address" class="form-label">详细地址</label>
+												<input type="text" class="form-control" id="address" placeholder=""
+													required>
+												<div class="invalid-feedback">
+													请填写详细地址
+												</div>
+											</div>
+										</div>
+										<div class="form-check mt-4">
+											<input type="checkbox" style="text-align: left;" id="save-info">
+											<label class="form-check-label" for="save-info">记住这些选项</label>
+										</div>
+								</div>
+
+								<hr class="my-3">
+
+								<button class="w-50 btn btn-primary btn-lg" type="submit">提交订单</button>
+								<script>
+									// 当文档加载完成后执行以下的函数  
+									$(function() {
+
+										// 绑定 'submit' 事件到所有的 'form' 元素上  
+										// 当表单尝试提交时，这个函数会被调用  
+										$('form').bind('submit', function() {
+
+											// 获取当前触发事件的表单元素的jQuery对象，并存储在变量$this中  
+											let $this = $(this);
+
+											// 使用HTML5的表单验证功能检查表单的有效性  
+											// 如果表单无效（即包含错误），则checkValidity()方法返回false  
+											if (!$this[0].checkValidity()) {
+
+												// 如果表单无效，给表单添加 'was-validated' 类  
+												// 这个类通常用于CSS中，以显示表单字段的错误状态或样式  
+												$this.addClass('was-validated');
+
+												// 阻止表单的默认提交行为  
+												// 也就是说，表单不会发送到服务器进行处理  
+												// 这通常用于在前端先处理表单数据或显示错误信息  
+												return false;
+											}
+										});
+									});
+								</script>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- 单一产品端 -->
+
+
+			<!-- 页脚开始 -->
+			<div class="container-fluid bg-dark footer py-2  "> <!-- d-none d-lg-block -->
+				<div class="container py-2">
+					<div class="pb-4 mb-4" style="border-bottom: 1px solid rgba(255, 255, 255, 0.08);">
+						<div class="row g-4">
+							<div class="col-lg-3">
+								<a href="#" class="d-flex flex-column flex-wrap">
+									<p class="text-white mb-0  py-2">黑龙江农业工程职业学院</p>
+									<small class="text-light py-2"
+										style="letter-spacing: 11px; line-height: 0;">信息工程学院</small>
+								</a>
+							</div>
+							<div class="col-lg-9  py-2">
+								<div class="d-flex position-relative rounded-pill overflow-hidden">
+									<input class="form-control border-0 w-100 py-3 rounded-pill" type="email"
+										placeholder="计算机网络技术22-6班">
+									<button type="submit"
+										class="btn btn-primary border-0 py-3 px-5 rounded-pill text-white position-absolute"
+										style="top: 0; right: 0;">立即搜索</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row g-5">
+						<div class="col-lg-6 col-xl-3">
+							<div class="footer-item-1">
+								<h4 class="mb-4 text-white">与我联系</h4>
+								<p class="text-secondary line-h">地址： <span class="text-white">哈尔滨市哈双路348号</span></p>
+								<p class="text-secondary line-h">Email: <span
+										class="text-white">206****07744@126.com</span>
+								</p>
+								<p class="text-secondary line-h">电话： <span class="text-white">138*****627</span></p>
+								<div class="d-flex line-h">
+									<a class="btn btn-light me-2 btn-md-square rounded-circle" href=""><i
+											class="bi bi-emoji-wink-fill"></i></a>
+									<a class="btn btn-light me-2 btn-md-square rounded-circle" href=""><i
+											class="bi bi-wechat"></i></a>
+									<a class="btn btn-light me-2 btn-md-square rounded-circle" href=""><i
+											class="bi bi-tencent-qq"></i></a>
+									<a class="btn btn-light btn-md-square rounded-circle" href=""><i
+											class="bi bi-tiktok"></i></a>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-6 col-xl-3">
+							<div class="footer-item-2">
+								<div class="d-flex flex-column mb-4">
+									<h4 class="mb-4 text-white">团队成员</h4>
+									<a href="#">
+										<div class="d-flex align-items-center">
+											<div class="rounded-circle border border-2 border-primary overflow-hidden">
+												<img src="img/footer-1.jpg" class="img-zoomin  rounded-circle w-100"
+													alt="">
+											</div>
+											<div class="d-flex flex-column ps-4">
+												<p class="text-uppercase text-white mb-3">站长</p>
+												<a href="#" class="h6 text-white">
+													负责网站的整体发展
+												</a>
+												<small class="text-white d-block"><i
+														class="bi bi-emoji-smile-fill"></i>让努力成为一种习惯!</small>
+											</div>
+										</div>
+									</a>
+								</div>
+								<div class="d-flex flex-column">
+									<a href="#">
+										<div class="d-flex align-items-center">
+											<div class="rounded-circle border border-2 border-primary overflow-hidden">
+												<img src="img/footer-2.jpg" class="img-zoomin rounded-circle w-100"
+													alt="">
+											</div>
+											<div class="d-flex flex-column ps-4">
+												<p class="text-uppercase text-white mb-3">管理员</p>
+												<a href="#" class="h6 text-white">
+													负责网站的维护与更新
+												</a>
+												<small class="text-white d-block"><i
+														class="bi bi-emoji-sunglasses-fill"></i>
+													越努力越幸运！</small>
+											</div>
+										</div>
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-6 col-xl-3">
+							<div class="d-flex flex-column text-start footer-item-3">
+								<h4 class="mb-4 text-white">友情链接</h4>
+								<a class="btn-link text-white" href="http://www.xinhuanet.com/"><i
+										class="fas fa-angle-right text-white me-2"></i>
+									新华社</a>
+								<a class="btn-link text-white" href="http://www.people.com.cn/"><i
+										class="fas fa-angle-right text-white me-2"></i>
+									人民日报</a>
+								<a class="btn-link text-white"
+									href="https://www.xuexi.cn/xxqg.html?id=3cba33e067d64ded8a1a503f0774675c"><i
+										class="fas fa-angle-right text-white me-2"></i>
+									学习强国</a>
+								<a class="btn-link text-white" href="https://www.ccps.gov.cn/"><i
+										class="fas fa-angle-right text-white me-2"></i>
+									中央党校</a>
+								<a class="btn-link text-white" href="https://www.huanqiu.com/"><i
+										class="fas fa-angle-right text-white me-2"></i>
+									环球时报</a>
+								<a class="btn-link text-white" href="https://v.ifeng.com/"><i
+										class="fas fa-angle-right text-white me-2"></i>
+									凤凰军事</a>
+							</div>
+						</div>
+
+						<div class="col-lg-6 col-xl-3">
+							<div class="footer-item-4">
+								<h4 class="mb-4 text-white">时光记忆</h4>
+								<div class="row g-2">
+									<div class="col-4">
+										<div class="rounded overflow-hidden">
+											<img src="img/sy/2 (6).jpg" class="img-zoomin  rounded w-100" alt="">
+										</div>
+									</div>
+									<div class="col-4">
+										<div class="rounded overflow-hidden">
+											<img src="img/sy/2 (4).jpg" class="img-zoomin  rounded w-100" alt="">
+										</div>
+									</div>
+									<div class="col-4">
+										<div class="rounded overflow-hidden">
+											<img src="img/sy/2 (7).jpg" class="img-zoomin  rounded w-100" alt="">
+										</div>
+									</div>
+									<div class="col-4">
+										<div class="rounded overflow-hidden">
+											<img src="img/sy/2 (13).jpg" class="img-zoomin  rounded w-100" alt="">
+										</div>
+									</div>
+									<div class="col-4">
+										<div class="rounded overflow-hidden">
+											<img src="img/sy/2 (15).jpg" class="img-zoomin  rounded w-100" alt="">
+										</div>
+									</div>
+									<div class="col-4">
+										<div class="rounded overflow-hidden">
+											<img src="img/sy/2 (17).jpg" class="img-zoomin  rounded w-100" alt="">
+										</div>
+									</div>
+									<div class="col-4">
+										<div class="rounded overflow-hidden">
+											<img src="img/sy/2 (14).jpg" class="img-zoomin  rounded w-100" alt="">
+										</div>
+									</div>
+									<div class="col-4">
+										<div class="rounded overflow-hidden">
+											<img src="img/sy/2 (9).jpg" class="img-zoomin  rounded w-100" alt="">
+										</div>
+									</div>
+									<div class="col-4">
+										<div class="rounded overflow-hidden">
+											<img src="img/sy/2 (18).jpg" class="img-zoomin  rounded w-100" alt="">
+										</div>
+									</div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Footer End -->
+
+
+			<!-- Copyright Start -->
+			<div class="container-fluid copyright bg-dark py-3">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-6 text-center text-md-start mb-1 mb-md-0">
+							<span class="text-light"><i class="fas fa-copyright text-light me-2"></i>明日世界窗,
+								All right reserved.</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Copyright End -->
+			<!-- Back to Top -->
+			<a href="#" class="btn btn-primary border-2 border-white rounded-circle back-to-top"><i
+					class="fa fa-arrow-up"></i></a>
+			<!-- JavaScript Libraries -->
+			<!-- <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.4/jquery.min.js"></script> -->
+			<script src="js/jquery.min.js"></script>
+			<!-- <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.0.0/js/bootstrap.bundle.min.js"></script> -->
+			<script src="js/bootstrap.bundle.min.js"></script>
+			<script src="lib/easing/easing.min.js"></script>
+			<script src="lib/waypoints/waypoints.min.js"></script>
+			<script src="lib/owlcarousel/owl.carousel.min.js"></script>
+			
+			<!-- Template Javascript -->
+			<script src="js/main.js"></script>
+			<!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+			<script src="js/x.js"></script>
+	</body>
+
+</html>
